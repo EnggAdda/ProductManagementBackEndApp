@@ -23,6 +23,10 @@ public class ProductController {
         return  productService.insertProductIntoDatabase(product);
     }
 
+    @GetMapping("/find/{id}")
+    public Product getProductById(@PathVariable int id) {
+        return  productService.getProductById(id);
+    }
 
 
 }
