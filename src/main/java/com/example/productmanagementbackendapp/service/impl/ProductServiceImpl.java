@@ -34,4 +34,11 @@ public class ProductServiceImpl implements ProductService {
        productRepo.save(productFromDB);
         return productFromDB;
     }
+
+    @Override
+    public Product deleteProduct(int id) {
+        Product product = productRepo.findById(id).get();
+        productRepo.deleteById(id);
+        return product;
+    }
 }
